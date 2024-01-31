@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1323236435208106870}
   - component: {fileID: 7144639706242223150}
   - component: {fileID: 16852058444622057}
+  - component: {fileID: 4755287625988818279}
   m_Layer: 5
   m_Name: Dash Count
   m_TagString: Untagged
@@ -77,6 +78,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4755287625988818279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639550979076801763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d1259869204f848a9355bf24b29bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashText: {fileID: 6747672239131597205}
 --- !u!1 &922571458454431766
 GameObject:
   m_ObjectHideFlags: 0
