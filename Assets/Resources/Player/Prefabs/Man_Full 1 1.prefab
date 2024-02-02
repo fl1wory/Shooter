@@ -547,7 +547,6 @@ GameObject:
   - component: {fileID: 8469034670569036926}
   - component: {fileID: 3247354974884781656}
   - component: {fileID: 5500722551960163356}
-  - component: {fileID: 9208563016739330809}
   - component: {fileID: 3410888148244687216}
   m_Layer: 0
   m_Name: Main Camera
@@ -612,7 +611,7 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 63
-  m_RenderingPath: -1
+  m_RenderingPath: 1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
@@ -620,7 +619,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!81 &3247354974884781656
@@ -645,33 +644,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 150
   playerBody: {fileID: 5446128084227721725}
---- !u!114 &9208563016739330809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1067953749938287810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e54079d1144e3a4cb6c65a2d66d9d10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnShoot:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3410888148244687216}
-        m_TargetAssemblyTypeName: shootScript, Assembly-CSharp
-        m_MethodName: Shoot
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &3410888148244687216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3341,7 +3313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5697669925479368537}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.70710695, z: -0, w: 0.70710665}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -18.121, y: 2.04, z: -46.987}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
