@@ -1,29 +1,70 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 //[CreateAssetMenu(fileName = "Weapon", menuName = "Weapon")]
 public class Weapon : MonoBehaviour
 {
-    [SerializeField]public float damage;
-    [SerializeField]public float speed;
-    [SerializeField]public string name;
-    [SerializeField]public int ammosCount;
-    [SerializeField]public int ammosCountMax;
-    [SerializeField]public GameObject bulletPrefab;
-    [SerializeField]public ParticleSystem shootEffect;
-    [SerializeField]public Transform shootPoint;
+    public float reloadTime;
+    public float damage;
+    public float speed;
+    public string weaponName;
+    public int ammoCount;
+    public int ammoCountMax;
+    public GameObject bulletPrefab;
+    public ParticleSystem shootEffect;
+    public Transform shootPoint;
+    public GameObject weaponGameObject;
+    public Text ammoCountText;
+    public Text ammoCountMaxText;
+    
+
+    ////////* Òευν³χν³ ημ³νν³*/////////
+    private bool isReloading = true;
 
 
-    public void Shoot(GameObject weaponGameObject)
+
+    private void Start()
     {
-        GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation); 
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        if (rb != null)
+        ammoCountMaxText.text = ammoCountMax.ToString();
+        ammoCountText.text = ammoCount.ToString();
+        StartCoroutine(Reload());
+    }
+
+    public void ShootGrenade(GameObject weaponGameObject)
+    {
+        if (!isReloading) 
+        { 
+            GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation); 
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                //weaponGameObject.transform.LookAt(weaponGameObject.transform.forward);
+                rb.AddForce(shootPoint.transform.up * speed, ForceMode.Impulse);
+                shootEffect.Play();
+                ammoCount--;
+                ammoCountText.text = ammoCount.ToString();
+            }
+        }
+    }
+
+    private IEnumerator Reload()
+    {
+        if (ammoCount <= 0 && !isReloading)
         {
-            rb.AddForce(weaponGameObject.transform.forward * speed, ForceMode.Impulse);
-            weaponGameObject.transform.LookAt(weaponGameObject.transform.forward);
-            shootEffect.Play();
+            ammoCount = ammoCountMax;
+            isReloading = true;
+            Debug.Log("reloading");
+            yield return new WaitForSeconds(reloadTime);
+            StartCoroutine(Reload());
+        }
+        else
+        {
+            isReloading = false;
+            yield return null;
+            StartCoroutine(Reload());
         }
     }
 
