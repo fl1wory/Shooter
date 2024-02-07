@@ -624,7 +624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 3935075400378937292, guid: dc44acb451ba53b4abdc14a3c3780f43, type: 3}
-  weapon: {fileID: 8714371734698820982}
+  weapon: {fileID: 0}
   weaponBullet: {fileID: 2367245824650495895}
   pushForce: 50
 --- !u!1 &1406785707778595357
@@ -3202,6 +3202,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1752947654275684768}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7407243309089130429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6977579667500633083}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6977579667500633083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7407243309089130429}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.02021, z: 0.0039}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3139559956947246381}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7621299228737523424
 GameObject:
   m_ObjectHideFlags: 0
@@ -3820,12 +3851,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8907559216342475931, guid: 832de72e37e768e44bfedd86ee5417de, type: 3}
+      propertyPath: shootPoint
+      value: 
+      objectReference: {fileID: 6977579667500633083}
+    - target: {fileID: 8907559216342475931, guid: 832de72e37e768e44bfedd86ee5417de, type: 3}
       propertyPath: weaponGameObject
       value: 
       objectReference: {fileID: 1067953749938287810}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4488906485954877415, guid: 832de72e37e768e44bfedd86ee5417de, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6977579667500633083}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 832de72e37e768e44bfedd86ee5417de, type: 3}
 --- !u!1 &2367245824650495895 stripped
@@ -3836,10 +3874,5 @@ GameObject:
 --- !u!4 &3139559956947246381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4488906485954877415, guid: 832de72e37e768e44bfedd86ee5417de, type: 3}
-  m_PrefabInstance: {fileID: 1574634310318164682}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8714371734698820982 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7869357981518106556, guid: 832de72e37e768e44bfedd86ee5417de, type: 3}
   m_PrefabInstance: {fileID: 1574634310318164682}
   m_PrefabAsset: {fileID: 0}

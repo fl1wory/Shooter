@@ -4841,7 +4841,7 @@ GameObject:
   - component: {fileID: 3314896126399114376}
   - component: {fileID: 8907559216342475931}
   m_Layer: 0
-  m_Name: D1201A071
+  m_Name: ClusterGrenadeLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
