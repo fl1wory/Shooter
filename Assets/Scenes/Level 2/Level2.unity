@@ -2587,11 +2587,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62378549}
   m_Mesh: {fileID: 4579454407841743219, guid: 4ba263d82ff3d5644a27f8fadb111145, type: 3}
---- !u!1 &66591108 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1067953749938287810, guid: 768d1356a9216124ab55e0b949422f24, type: 3}
-  m_PrefabInstance: {fileID: 622865054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &66744390
 GameObject:
   m_ObjectHideFlags: 0
@@ -3768,11 +3763,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105731201}
   m_Mesh: {fileID: -964895270735209126, guid: af4957c4208c9144eaa662b0b55f82d5, type: 3}
---- !u!198 &107756961 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1400773303692837686, guid: 768d1356a9216124ab55e0b949422f24, type: 3}
-  m_PrefabInstance: {fileID: 622865054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &116510340
 GameObject:
   m_ObjectHideFlags: 0
@@ -17903,7 +17893,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.055893, y: -0.0004272461}
+  m_AnchoredPosition: {x: 12.055908, y: -0.0004272461}
   m_SizeDelta: {x: 129.31178, y: 171.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &549113357
@@ -20678,14 +20668,42 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7945537654474518097, guid: 768d1356a9216124ab55e0b949422f24, type: 3}
+      propertyPath: shootPoint
+      value: 
+      objectReference: {fileID: 891822479}
+    - target: {fileID: 7945537654474518097, guid: 768d1356a9216124ab55e0b949422f24, type: 3}
+      propertyPath: ammoCountText
+      value: 
+      objectReference: {fileID: 1273537531}
+    - target: {fileID: 7945537654474518097, guid: 768d1356a9216124ab55e0b949422f24, type: 3}
+      propertyPath: ammoCountMaxText
+      value: 
+      objectReference: {fileID: 886744918}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2367245824650495895, guid: 768d1356a9216124ab55e0b949422f24, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3139559956947246381, guid: 768d1356a9216124ab55e0b949422f24, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1401923300}
+      addedObject: {fileID: 891822479}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 768d1356a9216124ab55e0b949422f24, type: 3}
+--- !u!4 &622865055 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3139559956947246381, guid: 768d1356a9216124ab55e0b949422f24, type: 3}
+  m_PrefabInstance: {fileID: 622865054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &622865056 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7945537654474518097, guid: 768d1356a9216124ab55e0b949422f24, type: 3}
+  m_PrefabInstance: {fileID: 622865054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8fe42b5b09b164ea5ddcfe701aec60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &623530627
 GameObject:
   m_ObjectHideFlags: 0
@@ -28204,6 +28222,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890511283}
   m_Mesh: {fileID: 7860663910981750377, guid: af4957c4208c9144eaa662b0b55f82d5, type: 3}
+--- !u!1 &891822478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 891822479}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &891822479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891822478}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.02021, z: 0.0039}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 622865055}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &893221216
 GameObject:
   m_ObjectHideFlags: 0
@@ -33457,12 +33506,12 @@ MonoBehaviour:
   OnShoot:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1401923300}
+      - m_Target: {fileID: 622865056}
         m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
         m_MethodName: ShootGrenade
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1401923299}
+          m_ObjectArgument: {fileID: 3935075400378937292, guid: dc44acb451ba53b4abdc14a3c3780f43, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -43224,11 +43273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7939606da92c0a48afb3b69f7670dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1393766728 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8332919628487319500, guid: 768d1356a9216124ab55e0b949422f24, type: 3}
-  m_PrefabInstance: {fileID: 622865054}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1394744129
 GameObject:
   m_ObjectHideFlags: 0
@@ -43407,35 +43451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7939606da92c0a48afb3b69f7670dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1401923299 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2367245824650495895, guid: 768d1356a9216124ab55e0b949422f24, type: 3}
-  m_PrefabInstance: {fileID: 622865054}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1401923300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401923299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee8fe42b5b09b164ea5ddcfe701aec60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reloadTime: 5
-  damage: 0
-  speed: 200
-  weaponName: 
-  ammoCount: 6
-  ammoCountMax: 6
-  bulletPrefab: {fileID: 3935075400378937292, guid: dc44acb451ba53b4abdc14a3c3780f43, type: 3}
-  shootEffect: {fileID: 107756961}
-  shootPoint: {fileID: 1393766728}
-  weaponGameObject: {fileID: 66591108}
-  ammoCountText: {fileID: 886744918}
-  ammoCountMaxText: {fileID: 1273537531}
 --- !u!1 &1402227643
 GameObject:
   m_ObjectHideFlags: 0

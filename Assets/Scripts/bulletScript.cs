@@ -12,8 +12,8 @@ public class bulletScript : MonoBehaviour
         if(collision.gameObject.tag == wallTag)
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-            EXPLOSION.GetComponent<ParticleSystem>().Play();
-            Destroy(gameObject, 1f);
+            //EXPLOSION.GetComponent<ParticleSystem>().Play();
+            Destroy(gameObject);
         }
     }
 }

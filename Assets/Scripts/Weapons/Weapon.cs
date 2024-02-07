@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -21,7 +20,7 @@ public class Weapon : MonoBehaviour
     public Text ammoCountMaxText;
     
 
-    ////////* Òευν³χν³ ημ³νν³*/////////
+    ////////* tech variables */////////
     private bool isReloading = true;
 
 
@@ -42,6 +41,7 @@ public class Weapon : MonoBehaviour
             if (rb != null)
             {
                 //weaponGameObject.transform.LookAt(weaponGameObject.transform.forward);
+                Debug.Log("shoot");
                 rb.AddForce(shootPoint.transform.up * speed, ForceMode.Impulse);
                 shootEffect.Play();
                 ammoCount--;
@@ -54,10 +54,10 @@ public class Weapon : MonoBehaviour
     {
         if (ammoCount <= 0 && !isReloading)
         {
-            ammoCount = ammoCountMax;
             isReloading = true;
             Debug.Log("reloading");
             yield return new WaitForSeconds(reloadTime);
+            ammoCount = ammoCountMax;
             StartCoroutine(Reload());
         }
         else
@@ -67,6 +67,10 @@ public class Weapon : MonoBehaviour
             StartCoroutine(Reload());
         }
     }
+
+
+
+
 
 
 
