@@ -32,6 +32,11 @@ public class Weapon : MonoBehaviour
         StartCoroutine(Reload());
     }
 
+    private void Update()
+    {
+        ammoCountText.text = ammoCount.ToString();
+    }
+
     public void ShootGrenade(GameObject weaponGameObject)
     {
         if (!isReloading) 
