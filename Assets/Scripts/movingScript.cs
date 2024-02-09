@@ -10,6 +10,7 @@ public class moveScript : MonoBehaviour
     private Rigidbody rb;
     private Vector3 movement;
     public GameObject camera;
+    public AudioListener audioListener;
 
     void Start()
     {
@@ -22,6 +23,14 @@ public class moveScript : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
         movement = Camera.main.transform.TransformDirection(new Vector3(moveHorizontal * speed, 0, moveVertical * speed));
         movement.y = rb.velocity.y;
+        if (movement != Vector3.zero ) 
+        {
+            AudioListener.volume = 1;
+        }
+        else
+        {
+            AudioListener.volume = 0;
+        }
         rb.velocity = movement;
         if (Input.GetKeyDown(KeyCode.Space))
         {
