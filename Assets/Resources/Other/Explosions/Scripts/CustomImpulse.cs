@@ -4,11 +4,11 @@ using UnityEngine;
 
 //using Cinemachine;
 
-/*namespace MirzaBeig.CinematicExplosionsFree
+namespace MirzaBeig.CinematicExplosionsFree
 {
     public class CustomImpulse : MonoBehaviour
     {
-       // CinemachineImpulseSource source;
+        //CinemachineImpulseSource source;
 
         void Start()
         {
@@ -17,12 +17,12 @@ using UnityEngine;
 
         void OnEnable()
         {
-            if (!source)
+            //if (!source)
             {
-                source = GetComponent<CinemachineImpulseSource>();
+           //     source = GetComponent<CinemachineImpulseSource>();
             }
 
-            source.GenerateImpulse();
+           // source.GenerateImpulse();
         }
 
         void Update()
@@ -31,4 +31,3 @@ using UnityEngine;
         }
     }
 }
-*/
