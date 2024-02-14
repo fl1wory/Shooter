@@ -29,12 +29,14 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
         isPaused = false;
+        Cursor.visible = false;
     }
     public void Stop()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
         isPaused = true;
+        Cursor.visible = true;
     }
     public void RestartScene()
     {

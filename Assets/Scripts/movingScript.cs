@@ -9,27 +9,28 @@ public class moveScript : MonoBehaviour
     private bool isJumping = false; 
     private Rigidbody rb;
     private Vector3 movement;
-    public GameObject camera;
-    public AudioListener audioListener;
+    private Camera camera;
+    public AudioSource audioSource;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        camera = Camera.main;
     }
 
     void Update()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        movement = Camera.main.transform.TransformDirection(new Vector3(moveHorizontal * speed, 0, moveVertical * speed));
+        movement = camera.transform.TransformDirection(new Vector3(moveHorizontal * speed, 0, moveVertical * speed));
         movement.y = rb.velocity.y;
         if (movement != Vector3.zero ) 
         {
-            AudioListener.volume = 1;
+            audioSource.volume = 1;
         }
         else
         {
-            AudioListener.volume = 0;
+            audioSource.volume = 0;
         }
         rb.velocity = movement;
         if (Input.GetKeyDown(KeyCode.Space))

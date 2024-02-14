@@ -6,18 +6,20 @@ using UnityEngine.UI;
 //[CreateAssetMenu(fileName = "Weapon", menuName = "Weapon")]
 public class Weapon : MonoBehaviour
 {
-    public float reloadTime;
-    public float damage;
-    public float speed;
-    public string weaponName;
-    public int ammoCount;
-    public int ammoCountMax;
-    public GameObject bulletPrefab;
-    public ParticleSystem shootEffect;
-    public Transform shootPoint;
-    public GameObject weaponGameObject;
-    public Text ammoCountText;
-    public Text ammoCountMaxText;
+    [SerializeField] protected float reloadTime;
+    [SerializeField] protected float damage;
+    [SerializeField] protected float speed;
+    [SerializeField] protected string weaponName;
+    [SerializeField] protected int ammoCount;
+    [SerializeField] protected int ammoCountMax;
+    [SerializeField] protected GameObject bulletPrefab;
+    [SerializeField] protected ParticleSystem shootEffect;
+    [SerializeField] protected Transform shootPoint;
+    [SerializeField] protected GameObject weaponGameObject;
+    [SerializeField] protected Text ammoCountText;
+    [SerializeField] protected Text ammoCountMaxText;
+    [SerializeField] protected AudioSource ShootSoundAudioSource;
+    [SerializeField] private AudioSource ReloadSoundAudioSource;
     
 
     ////////* tech variables */////////
@@ -51,6 +53,7 @@ public class Weapon : MonoBehaviour
                 shootEffect.Play();
                 ammoCount--;
                 ammoCountText.text = ammoCount.ToString();
+                ShootSoundAudioSource.Play();
             }
         }
     }
@@ -64,6 +67,7 @@ public class Weapon : MonoBehaviour
             yield return new WaitForSeconds(reloadTime);
             ammoCount = ammoCountMax;
             StartCoroutine(Reload());
+            ReloadSoundAudioSource.Play();
         }
         else
         {
