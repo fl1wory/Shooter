@@ -9,11 +9,17 @@ public class bulletScript : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == wallTag)
+        if (collision.gameObject.tag == wallTag)
         {
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-            //EXPLOSION.GetComponent<ParticleSystem>().Play();
+            EXPLOSION.GetComponent<ParticleSystem>().Play();
             Destroy(gameObject);
         }
+    }
+
+    public void explode(float delay)
+    {
+        EXPLOSION.GetComponent<ParticleSystem>().Play();
+        Destroy(gameObject, delay);
     }
 }

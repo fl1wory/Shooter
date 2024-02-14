@@ -86,7 +86,7 @@ PrefabInstance:
       addedObject: {fileID: 4034511569222967789}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 374d12960a8c4c541afa13dcddbbb90e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7394601605895564240}
+      addedObject: {fileID: 1131582758224477854}
   m_SourcePrefab: {fileID: 100100000, guid: 374d12960a8c4c541afa13dcddbbb90e, type: 3}
 --- !u!1 &3935075400378937292 stripped
 GameObject:
@@ -114,7 +114,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3935075400378937292}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: c02266b5586b5ea4eb171fb276010a8c, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -123,7 +123,7 @@ CapsuleCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.001709145
@@ -157,7 +157,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &7394601605895564240
+--- !u!114 &1131582758224477854
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,14 +166,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3935075400378937292}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab69e3bf3322ed458ad1d4df21848e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 251c2542815c0d94690c6ffaa7447123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 0}
-  numberOfObjectsToSpawn: 0
-  pushForce: 50
-  rotationAngle: 10
-  floorTag: floorTest
+  damagePerPounce: 10
+  maxBounces: 5
 --- !u!4 &4456279493690439030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 374d12960a8c4c541afa13dcddbbb90e, type: 3}

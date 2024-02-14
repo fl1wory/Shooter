@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     public List<GameObject> objects;
-    public List<Weapon> weapons;
     public List<GameObject> weaponIcons;
+
+    [Header("Main Variables")]
+    public List<Weapon> weapons;
     [HideInInspector]public int index = 0;
 
     void Update()

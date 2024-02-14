@@ -2376,6 +2376,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 5375954039308927951}
   - {fileID: 2047335328180319223}
+  weaponIcons: []
   index: 0
 --- !u!1 &5775135100788185922
 GameObject:

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class moveScript : MonoBehaviour
 {
-    public float speed = 10.0f;
-    public float jumpForce = 10.0f;
+    [SerializeField] PlayerStats playerStats;
+    private float speed;
+    private float jumpForce;
     private bool isJumping = false; 
     private Rigidbody rb;
     private Vector3 movement;
@@ -16,6 +17,8 @@ public class moveScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         camera = Camera.main;
+        speed = playerStats.speed;
+        jumpForce = playerStats.jumpForce;
     }
 
     void Update()
