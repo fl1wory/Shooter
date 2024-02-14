@@ -5,18 +5,30 @@ using UnityEngine.Events;
 
 public class EventsScript : MonoBehaviour
 {
-    [SerializeField] UnityEvent OnShoot;
+    public Inventory inventory;
+    [SerializeField] UnityEvent OnShootCluster;
+    [SerializeField] UnityEvent OnShootHoming;
 
-    public void onShoot()
+    public void onShootCluster()
     {
-        OnShoot.Invoke();
+        OnShootCluster.Invoke();
+    }
+
+    public void onShootHoming()
+    { 
+        OnShootHoming.Invoke();
     }
 
     public void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && inventory.index == 0)
         {
-            onShoot();
+            onShootCluster();
+        }
+
+        if (Input.GetMouseButtonDown(0) && inventory.index == 1)
+        {
+            onShootHoming();
         }
     }
 }

@@ -34,6 +34,11 @@ public class Weapon : MonoBehaviour
         StartCoroutine(Reload());
     }
 
+    public void ReloadF()
+    {
+        StartCoroutine(Reload());
+    }
+
     private void Update()
     {
         ammoCountText.text = ammoCount.ToString();
@@ -77,67 +82,4 @@ public class Weapon : MonoBehaviour
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*
-    public float Damage
-    {
-        get { return _damage; }
-        set { _damage = value; }
-    }
-
-    public float Speed
-    {
-        get { return _speed; }
-        set { _speed = value; }
-    }
-
-    public string Name
-    {
-        get { return _name; }
-        set { _name = value; }
-    }
-
-    public int AmmosCount
-    {
-        get { return _ammosCount; }
-        set { _ammosCount = value; }
-    }
-
-    public int AmmosCountMax
-    {
-        get { return _ammosCountMax; }
-        set { _ammosCountMax  = value; }
-    }
-
-    public GameObject BulletPrefab
-    {
-        get { return _bulletPrefab; }
-        set { _bulletPrefab = value; }
-    }
-
-    public GameObject ShootEffect
-    {
-        get { return _shootEffect; }
-        set { _shootEffect = value; }
-    }
-
-    public Transform ShootPoint
-    {
-        get { return _shootPoint; }
-        set { _shootPoint = value; }
-    }
-    */
 }
