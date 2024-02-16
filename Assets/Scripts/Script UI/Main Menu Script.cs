@@ -13,7 +13,13 @@ public class MainMenuScript : MonoBehaviour
     public GameObject settings;
 
     public AudioMixer masterVolume;
-    public Slider volSlider;
+    public AudioMixerGroup musicVolume;
+    public AudioMixerGroup SFXVolume;
+
+    
+    public Slider masterSlider;
+    public Slider musicSlider;
+    public Slider SFXSlider;
 
     public Dropdown resolutionDropdown;
     public Dropdown graphicsDropdown;
@@ -57,8 +63,14 @@ public class MainMenuScript : MonoBehaviour
     }
     void Start()
     {
-        volSlider.value = PlayerPrefs.GetFloat("MyVolume", 1f);
-        masterVolume.SetFloat("volume", PlayerPrefs.GetFloat("MyVolume"));
+        masterSlider.value = PlayerPrefs.GetFloat("MyMasterVolume", 1f);
+        masterVolume.SetFloat("MasterVolume", PlayerPrefs.GetFloat("MyMasterVolume"));
+
+        musicSlider.value = PlayerPrefs.GetFloat("MyMusicVolume", 1f);
+        musicVolume.audioMixer.SetFloat("MusicVolume", PlayerPrefs.GetFloat("MyMusicVolume"));
+
+        SFXSlider.value = PlayerPrefs.GetFloat("MySFX", 1f);
+        SFXVolume.audioMixer.SetFloat("SFX", PlayerPrefs.GetFloat("MySFX"));
 
         graphicsDropdown.value = PlayerPrefs.GetInt(prefName, 2);
 
@@ -85,7 +97,6 @@ public class MainMenuScript : MonoBehaviour
         resolutionDropdown.value = PlayerPrefs.GetInt(resName,currentResolutionIndex);
         resolutionDropdown.RefreshShownValue();
     }
-
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
@@ -110,11 +121,20 @@ public class MainMenuScript : MonoBehaviour
             PlayerPrefs.SetInt("toggleState",1);
         }
     }
-    public void SetVolume(float volume)
+    public void SetMasterVolume()
     {
-        PlayerPrefs.SetFloat("MyVolume",volume);
-        masterVolume.SetFloat("volume",PlayerPrefs.GetFloat("MyVolume"));
-
+        PlayerPrefs.SetFloat("MyMasterVolume", masterSlider.value);
+        masterVolume.SetFloat("MasterVolume", PlayerPrefs.GetFloat("MyMasterVolume"));
+    }
+    public void SetMusicVolume()
+    {
+        PlayerPrefs.SetFloat("MyMusicVolume", musicSlider.value);
+        musicVolume.audioMixer.SetFloat("MusicVolume", PlayerPrefs.GetFloat("MyMusicVolume"));
+    }
+    public void SetSFXVolume()
+    {
+        PlayerPrefs.SetFloat("MySFX", SFXSlider.value);
+        musicVolume.audioMixer.SetFloat("SFX", PlayerPrefs.GetFloat("MySFX"));
     }
     public void SettingsEnter()
     {
