@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HGMain
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 374d12960a8c4c541afa13dcddbbb90e, type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -87,6 +91,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 374d12960a8c4c541afa13dcddbbb90e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1131582758224477854}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 374d12960a8c4c541afa13dcddbbb90e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3246242570881559159}
   m_SourcePrefab: {fileID: 100100000, guid: 374d12960a8c4c541afa13dcddbbb90e, type: 3}
 --- !u!1 &3935075400378937292 stripped
 GameObject:
@@ -171,6 +178,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damagePerPounce: 10
   maxBounces: 5
+  grenades: {fileID: 0}
+--- !u!114 &-3246242570881559159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3935075400378937292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adfd1110e7d8884428f3e89196559894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!4 &4456279493690439030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 374d12960a8c4c541afa13dcddbbb90e, type: 3}

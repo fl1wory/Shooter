@@ -571,7 +571,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.12
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 104.030975
   orthographic: 0
@@ -2226,6 +2226,8 @@ GameObject:
   - component: {fileID: 374093502956297993}
   - component: {fileID: 1760116626288013508}
   - component: {fileID: 8361107674460690466}
+  - component: {fileID: 5335820086264620531}
+  - component: {fileID: 5168624869376090318}
   m_Layer: 6
   m_Name: Man_Full 1 1
   m_TagString: Player
@@ -2328,8 +2330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7653e048e0715914783792c25c08321f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7.5
-  jumpForce: 100
+  playerStats: {fileID: 5168624869376090318}
   audioSource: {fileID: 9222980775864638205}
 --- !u!54 &1760116626288013508
 Rigidbody:
@@ -2373,11 +2374,47 @@ MonoBehaviour:
   objects:
   - {fileID: 196799702054158352}
   - {fileID: 3286865130494568757}
+  weaponIcons:
+  - {fileID: 0}
+  - {fileID: 0}
   weapons:
   - {fileID: 5375954039308927951}
   - {fileID: 2047335328180319223}
-  weaponIcons: []
   index: 0
+--- !u!114 &5335820086264620531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5697669925479368537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5363dd969e438634892e1ff68b2c9695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  dashCount: 0
+  speed: 10
+  jumpForce: 10
+  guns: {fileID: 8361107674460690466}
+--- !u!114 &5168624869376090318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5697669925479368537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5363dd969e438634892e1ff68b2c9695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  dashCount: 0
+  speed: 10
+  jumpForce: 10
+  guns: {fileID: 8361107674460690466}
 --- !u!1 &5775135100788185922
 GameObject:
   m_ObjectHideFlags: 0
@@ -4001,6 +4038,14 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4810924924223510418, guid: 7ff289069ddaf7642a6602b403799f84, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810924924223510418, guid: 7ff289069ddaf7642a6602b403799f84, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 8748896977595240045, guid: f455b88eae004d6478b85171991c4545, type: 3}
     - target: {fileID: 4810924924223510418, guid: 7ff289069ddaf7642a6602b403799f84, type: 3}
       propertyPath: weaponGameObject
       value: 

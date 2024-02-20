@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 6346298590270673816}
   - component: {fileID: 5490443592899965509}
   - component: {fileID: 4547878306803641870}
+  - component: {fileID: -1518279593191560211}
   m_Layer: 0
   m_Name: BouncingGrenade
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,6 +166,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.0054630283
   m_Center: {x: -0.000012525474, y: 0.0020395042, z: -0.000041929772}
+--- !u!114 &-1518279593191560211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8748896977595240045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adfd1110e7d8884428f3e89196559894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1001 &8502746218423557944
 PrefabInstance:
   m_ObjectHideFlags: 0

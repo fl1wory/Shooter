@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BouncingGrenades : MonoBehaviour
 {
-    public float damagePerPounce = 10f;
+    public float damagePerPounce;
     public int maxBounces = 5;
     private int remainingBounces;
     [SerializeField] private bulletScript grenades;
