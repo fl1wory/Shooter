@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ShowTargetsDamage : MonoBehaviour
 {
-    [SerializeField] private Text damageText;
-
+    [SerializeField] private TextMesh damageText;
+    //змінив Text на Text Mesh щоб простіше 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Bullet")
