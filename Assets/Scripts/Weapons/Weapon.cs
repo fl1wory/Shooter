@@ -6,12 +6,12 @@ using UnityEngine.UI;
 //[CreateAssetMenu(fileName = "Weapon", menuName = "Weapon")]
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] protected float reloadTime;
-    [SerializeField] protected float damage;
-    [SerializeField] protected float speed;
-    [SerializeField] protected string weaponName;
-    [SerializeField] protected int ammoCount;
-    [SerializeField] protected int ammoCountMax;
+    public float reloadTime;
+    public float damage;
+    public float speed;
+    public string weaponName;
+    public int ammoCount;
+    public int ammoCountMax;
     [SerializeField] protected GameObject bulletPrefab;
     [SerializeField] protected ParticleSystem shootEffect;
     [SerializeField] protected Transform shootPoint;

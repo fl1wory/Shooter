@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class EventsScript : MonoBehaviour
 {
-    public Inventory inventory;
+    public GunsInventory inventory;
     [SerializeField] UnityEvent OnShootCluster;
     [SerializeField] UnityEvent OnShootHoming;
 

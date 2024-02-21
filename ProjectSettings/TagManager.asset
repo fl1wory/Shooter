@@ -6,6 +6,7 @@ TagManager:
   tags:
   - floorTest
   - Bullet
+  - "\u04214"
   layers:
   - Default
   - TransparentFX

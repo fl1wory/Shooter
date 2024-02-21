@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Inventory : MonoBehaviour
+public class GunsInventory : MonoBehaviour
 {
     public List<GameObject> objects;
     public List<GameObject> weaponIcons;

@@ -2227,7 +2227,6 @@ GameObject:
   - component: {fileID: 1760116626288013508}
   - component: {fileID: 8361107674460690466}
   - component: {fileID: 5335820086264620531}
-  - component: {fileID: 5168624869376090318}
   m_Layer: 6
   m_Name: Man_Full 1 1
   m_TagString: Player
@@ -2330,7 +2329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7653e048e0715914783792c25c08321f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 5168624869376090318}
+  playerStats: {fileID: 0}
   audioSource: {fileID: 9222980775864638205}
 --- !u!54 &1760116626288013508
 Rigidbody:
@@ -2382,23 +2381,6 @@ MonoBehaviour:
   - {fileID: 2047335328180319223}
   index: 0
 --- !u!114 &5335820086264620531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5697669925479368537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5363dd969e438634892e1ff68b2c9695, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  dashCount: 0
-  speed: 10
-  jumpForce: 10
-  guns: {fileID: 8361107674460690466}
---- !u!114 &5168624869376090318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
