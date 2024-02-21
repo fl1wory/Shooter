@@ -11,6 +11,11 @@ public class PowerUpsInventory : MonoBehaviour
         if(powerUpsTags.Contains(collision.gameObject.tag)) 
         {
             Pick(collision.gameObject);
+            Shield shield = collision.gameObject.GetComponent<Shield>();
+            if (shield)   
+            {
+                shield.SetShield();
+            }
         }
     }
 

@@ -15,9 +15,10 @@ public class PlayerStats : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        if(other.transform.parent.gameObject.name == "CGMain" || other.transform.parent.gameObject.name == "CGSeprate")
+        if(other.gameObject.name == "CGMain" || other.gameObject.name == "CGSeprate")
         {
-            GetDamage(ClusterWeapon.damage);
+            health -= ClusterWeapon.damage / armorCoef;
+            Debug.Log(health);
         }
     }
 

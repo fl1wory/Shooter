@@ -213,7 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 417761080263594737, guid: 7800b8f6b712bfe49bd663eeb3ebe1e4, type: 3}
       propertyPath: m_Name
-      value: Explosion Fire
+      value: CGMain
       objectReference: {fileID: 0}
     - target: {fileID: 417761080263594739, guid: 7800b8f6b712bfe49bd663eeb3ebe1e4, type: 3}
       propertyPath: playOnAwake
