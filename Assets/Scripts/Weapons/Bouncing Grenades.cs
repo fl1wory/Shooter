@@ -15,7 +15,7 @@ public class BouncingGrenades : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        grenades.explode(2);
+        //grenades.explode(2);
         if (remainingBounces >= 0)
         {
             remainingBounces--;
@@ -25,7 +25,7 @@ public class BouncingGrenades : MonoBehaviour
         }
         else
         {
-            grenades.explode(0);
+            //grenades.explode(0);
         }
     }
 }

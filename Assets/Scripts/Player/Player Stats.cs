@@ -10,30 +10,34 @@ public class PlayerStats : MonoBehaviour
     public  float speed;
     public float jumpForce;
     public float armorCoef;
-    [Header("Guns and PowerUps")]
-    [SerializeField] private Weapon ClusterWeapon;
 
-    void OnParticleCollision(GameObject other)
+    void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "CGMain" || other.gameObject.name == "CGSeprate")
+        if(other.gameObject.CompareTag("Bullet") && other.gameObject.TryGetComponent<bulletScript>(out bulletScript bulletScr))
         {
-            health -= ClusterWeapon.damage / armorCoef;
-            Debug.Log(health);
+            GetDamage(bulletScr.damage);
         }
     }
 
-
-    void GetDamage(float damage)
+    public void GetDamage(float damage)
     {
-        health -= damage * armorCoef;
+        if (armorCoef <= 0)
+        {
+            armorCoef = 1;
+        }
+        health -= damage / armorCoef;
         Debug.Log(health);
     }
 
-    void Death()
+    void Update()
     {
         if(health <= 0) 
         {
-            Destroy(gameObject);
+            Death();
         }
+    }
+    void Death()
+    {
+        Destroy(gameObject);
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moveScript : MonoBehaviour
+public class movingScript : MonoBehaviour
 {
     [SerializeField] PlayerStats playerStats;
     private float speed;
@@ -10,38 +10,32 @@ public class moveScript : MonoBehaviour
     private bool isJumping = false; 
     private Rigidbody rb;
     private Vector3 movement;
-    private Camera camera;
+    private Camera cam;
     public AudioSource audioSource;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        camera = Camera.main;
+        cam = Camera.main;
         speed = playerStats.speed;
         jumpForce = playerStats.jumpForce;
     }
 
     void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        movement = camera.transform.TransformDirection(new Vector3(moveHorizontal * speed, 0, moveVertical * speed));
-        movement.y = rb.velocity.y;
-        if (movement != Vector3.zero ) 
-        {
-            audioSource.volume = 1;
-        }
-        else
-        {
-            audioSource.volume = 0;
-        }
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveVertical = Input.GetAxisRaw("Vertical");
+        movement = cam.transform.TransformDirection(new Vector3(moveHorizontal * speed, 0, moveVertical * speed));
         rb.velocity = movement;
+        Debug.Log(rb.velocity);
+        //audioSource.volume = movement != Vector3.zero ? 1 : 0;
+        /*
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(new Vector3(camera.transform.forward.x, camera.transform.forward.y/10, camera.transform.forward.z) * jumpForce, ForceMode.Impulse);
+            rb.AddForce(new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z) * jumpForce, ForceMode.Impulse);
             Debug.Log("jump");
             isJumping = true; 
-        }
+        }*/
     }
 
     void OnCollisionEnter(Collision collision)

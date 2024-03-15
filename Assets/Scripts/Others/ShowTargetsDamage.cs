@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class ShowTargetsDamage : MonoBehaviour
 {
     [SerializeField] private TextMesh damageText;
-    //змінив Text на Text Mesh щоб простіше 
+    //пїЅпїЅпїЅпїЅпїЅ Text пїЅпїЅ Text Mesh пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            damageText.text = $"{collision.gameObject.GetComponent<BulletStats>().damage}";
+            damageText.text = $"{collision.gameObject.GetComponent<bulletScript>().damage}";
         }
     }
 }

@@ -6,6 +6,6 @@ public class ClusterGrenadeLauncher : Weapon
 {
     void ShootGrenade()
     {
-        ShootGrenade(this.weaponGameObject);
+        ShootGrenade();
     }
 }

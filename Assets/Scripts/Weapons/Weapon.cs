@@ -41,10 +41,10 @@ public class Weapon : MonoBehaviour
 
     private void Update()
     {
-        ammoCountText.text = ammoCount.ToString();
+        ammoCountText.text = $"{ammoCount}";
     }
 
-    public void ShootGrenade(GameObject weaponGameObject)
+    public void ShootGrenade()
     {
         if (!isReloading) 
         { 
@@ -52,7 +52,6 @@ public class Weapon : MonoBehaviour
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                //weaponGameObject.transform.LookAt(weaponGameObject.transform.forward);
                 Debug.Log("shoot");
                 rb.AddForce(shootPoint.transform.up * speed, ForceMode.Impulse);
                 shootEffect.Play();
@@ -81,5 +80,4 @@ public class Weapon : MonoBehaviour
             StartCoroutine(Reload());
         }
     }
-
 }

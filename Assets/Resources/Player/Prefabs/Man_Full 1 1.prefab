@@ -2221,13 +2221,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5446128084227721725}
-  - component: {fileID: 2009809418210573870}
-  - component: {fileID: 1842730673259192550}
   - component: {fileID: 374093502956297993}
-  - component: {fileID: 1760116626288013508}
   - component: {fileID: 8361107674460690466}
   - component: {fileID: 5335820086264620531}
-  - component: {fileID: 9155850251188506257}
+  - component: {fileID: 8457639263584206298}
+  - component: {fileID: 8575271349814141278}
   m_Layer: 6
   m_Name: Man_Full 1 1
   m_TagString: Player
@@ -2270,55 +2268,6 @@ Transform:
   - {fileID: 194351686657966000}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!95 &2009809418210573870
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5697669925479368537}
-  m_Enabled: 0
-  m_Avatar: {fileID: 9000000, guid: b8a7488d12adc39498433d60811eab1a, type: 3}
-  m_Controller: {fileID: 9100000, guid: f77192faa44bee34db57450a811f207d, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'root'\n\tTransform 'lowerarm_l'\n\tTransform
-    'root'\n\tTransform 'neck_01'\n\tTransform 'clavicle_l'\n\tTransform 'ring_02_l'\n\tTransform
-    'hand_l'\n\tTransform 'middle_01_l'\n\tTransform 'ring_01_r'\n\tTransform 'spine_02'\n\tand
-    more ...\n\tFrom animation clip 'Idle'"
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!136 &1842730673259192550
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5697669925479368537}
-  m_Material: {fileID: 13400000, guid: 39b16162830b0ed4292e2603053624e2, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &374093502956297993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2333,33 +2282,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 5335820086264620531}
   audioSource: {fileID: 9222980775864638205}
---- !u!54 &1760116626288013508
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5697669925479368537}
-  serializedVersion: 4
-  m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 3
 --- !u!114 &8361107674460690466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2397,25 +2319,58 @@ MonoBehaviour:
   health: 100
   dashCount: 0
   speed: 10
-  jumpForce: 10
+  jumpForce: 0
   armorCoef: 0
-  ClusterWeapon: {fileID: 5375954039308927951}
---- !u!114 &9155850251188506257
-MonoBehaviour:
+--- !u!54 &8457639263584206298
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5697669925479368537}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 3
+--- !u!136 &8575271349814141278
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5697669925479368537}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3fef0b272d91a24380b861cb2670a57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerUps: []
-  powerUpsTags:
-  - Shield
-  - C4
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &5775135100788185922
 GameObject:
   m_ObjectHideFlags: 0
@@ -3978,6 +3933,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4488906485954877415, guid: 832de72e37e768e44bfedd86ee5417de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016217416949780098, guid: 832de72e37e768e44bfedd86ee5417de, type: 3}
+      propertyPath: reloadTime
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9016217416949780098, guid: 832de72e37e768e44bfedd86ee5417de, type: 3}

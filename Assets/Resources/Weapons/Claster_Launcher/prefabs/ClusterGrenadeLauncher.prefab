@@ -5029,7 +5029,7 @@ MonoBehaviour:
   weaponName: 
   ammoCount: 6
   ammoCountMax: 6
-  bulletPrefab: {fileID: 3935075400378937292, guid: 233cc6ce0552b6347a5aefb64e55fd1d, type: 3}
+  bulletPrefab: {fileID: 3935075400378937292, guid: dc44acb451ba53b4abdc14a3c3780f43, type: 3}
   shootEffect: {fileID: 480392478954768892}
   shootPoint: {fileID: 6818607360315442508}
   weaponGameObject: {fileID: 0}
