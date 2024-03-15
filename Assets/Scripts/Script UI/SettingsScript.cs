@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEditor.SearchService;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenuScript : MonoBehaviour
+public class SettingsScript : MonoBehaviour
 {
      private enum limits
      {
@@ -19,24 +20,29 @@ public class MainMenuScript : MonoBehaviour
         FPS360 = 360,
         FPS420 = 420,
      }
-    public GameObject mainMenu;
-    public GameObject levelSelect;
-    public GameObject settings;
 
-    public AudioMixer masterVolume;
-    public AudioMixerGroup musicVolume;
-    public AudioMixerGroup SFXVolume;
+    /*[Header("Menu Tabs")] 
+    [SerializeField]public GameObject mainMenuPanel;
+    [SerializeField]public GameObject levelSelectPanel;
+    [SerializeField]public GameObject settingsPanel;
+    */
+    [Header("Audio Mixer/Groups")]
+    [SerializeField]public AudioMixer masterVolume;
+    [SerializeField]public AudioMixerGroup musicVolume;
+    [SerializeField]public AudioMixerGroup SFXVolume;
 
+    [Header("Sliders")]
+    [SerializeField]public Slider masterSlider;
+    [SerializeField]public Slider musicSlider;
+    [SerializeField]public Slider SFXSlider;
+
+    [Header("Dropdowns")]
+    [SerializeField]public Dropdown resolutionDropdown;
+    [SerializeField]public Dropdown graphicsDropdown;
+    [SerializeField]public Dropdown refreshRateDropdown;
     
-    public Slider masterSlider;
-    public Slider musicSlider;
-    public Slider SFXSlider;
-
-    public Dropdown resolutionDropdown;
-    public Dropdown graphicsDropdown;
-    public Dropdown refreshRateDropdown;
-
-    public Toggle fullscreenToggle;
+    [Header("Toggles")]
+    [SerializeField]public Toggle fullscreenToggle;
 
     private int screenInt;
 
@@ -44,16 +50,19 @@ public class MainMenuScript : MonoBehaviour
     private bool isFullscreen = false;
 
     List<limits> refreshRateList = new List<limits>();
-    int currentRefRate;
+    private int currentRefRate;
+
+    //private GameObject previousPanel;
 
     const string prefName = "optionValue";
     const string resName = "resolutionValue";
     const string refRateName = "refreshRateValue";
-
+    
 
 
     void Awake()
     {
+      // previousPanel = mainMenuPanel;
         screenInt = PlayerPrefs.GetInt("toggleState");
         if(screenInt == 1)
         {
@@ -99,8 +108,6 @@ public class MainMenuScript : MonoBehaviour
         resolutionDropdown.ClearOptions();
         refreshRateDropdown.ClearOptions();
 
-        Debug.Log("RefreshRate" + currentRefRate);
-
         List<string> options = new List<string>();
        
         int currentResolutionIndex = 0;
@@ -120,26 +127,20 @@ public class MainMenuScript : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
 
         int currentRefreshRateIndex = 0;
-
-        refreshRateList.Add(limits.NoLimit);
-        refreshRateList.Add(limits.FPS30);
-        refreshRateList.Add(limits.FPS60);
-        refreshRateList.Add(limits.FPS90);
-        refreshRateList.Add(limits.FPS120);
-        refreshRateList.Add(limits.FPS240);
-        refreshRateList.Add(limits.FPS360);
-        refreshRateList.Add(limits.FPS420);
+        foreach(int i in Enum.GetValues(typeof(limits)))
+        {
+            refreshRateList.Add((limits)i);
+        }
 
         List<string> refreshRateOptions = new List<string>();
         for (int i = 0; i < refreshRateList.Count; i++)
         {
             string option = refreshRateList[i].ToString();
             refreshRateOptions.Add(option);
-            if(refreshRateList[i] == (limits)Screen.currentResolution.refreshRate)
+            if(refreshRateList[i] == (limits)Screen.currentResolution.refreshRateRatio.value)
             {
                 currentRefreshRateIndex = (int)refreshRateList[i];
             }
-            Debug.Log(option);
         }
 
         refreshRateDropdown.AddOptions(refreshRateOptions);
@@ -189,41 +190,35 @@ public class MainMenuScript : MonoBehaviour
         PlayerPrefs.SetFloat("MySFX", SFXSlider.value);
         musicVolume.audioMixer.SetFloat("SFX", PlayerPrefs.GetFloat("MySFX"));
     }
-    public void SettingsEnter()
+  /* public void OnButtonSettings()
     {
-        mainMenu.SetActive(false);
-        settings.SetActive(true);
+        ControllerPanel(settingsPanel, ref previousPanel);
     }
-    public void SettingsExit()
+    public void OnButtonPlay()
     {
-        settings.SetActive(false);
-        mainMenu.SetActive(true);
+        ControllerPanel(levelSelectPanel, ref previousPanel);
     }
-    public void LevelSelectPlay()
+    public void OnButtonMenu()
     {
-        mainMenu.SetActive(false);
-        levelSelect.SetActive(true);
+        ControllerPanel(mainMenuPanel, ref previousPanel);
     }
-    public void LevelSelectQuit()
-    {
-        levelSelect.SetActive(false);
-        mainMenu.SetActive(true);
-    }
-    public void Level1()
-    {
-        SceneManager.LoadScene(1);
-    }
-    public void Level2()
-    {
-        SceneManager.LoadScene(2);
-    }
-
-    public void Level3()
-    {
-        SceneManager.LoadScene(2);
-    }
+   */
     public void Exit()
     {
         Application.Quit();
+    }
+   /* private void ControllerPanel(GameObject currentPanel, ref GameObject previous)
+    {
+        currentPanel.SetActive(true);
+        if (previous != currentPanel)
+        {
+            previous.SetActive(!previous.activeSelf);
+            previous = currentPanel;
+        }
+    }
+    */
+    public void LevelSelector(int levelIndex)
+    {
+        SceneManager.LoadScene(levelIndex);
     }
 }
