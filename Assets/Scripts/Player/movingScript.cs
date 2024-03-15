@@ -25,17 +25,14 @@ public class movingScript : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
         float moveVertical = Input.GetAxisRaw("Vertical");
-        movement = cam.transform.TransformDirection(new Vector3(moveHorizontal * speed, 0, moveVertical * speed));
-        rb.velocity = movement;
-        Debug.Log(rb.velocity);
-        //audioSource.volume = movement != Vector3.zero ? 1 : 0;
-        /*
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z) * jumpForce, ForceMode.Impulse);
-            Debug.Log("jump");
-            isJumping = true; 
-        }*/
+        movement = new Vector3(moveHorizontal, 0, moveVertical);
+        movement.Normalize();        
+    }
+
+    void FixedUpdate()
+    {
+        Vector3 moveDirection = movement * speed * Time.fixedDeltaTime;
+        rb.velocity = moveDirection * speed;
     }
 
     void OnCollisionEnter(Collision collision)

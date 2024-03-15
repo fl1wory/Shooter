@@ -112,7 +112,7 @@ MonoBehaviour:
   wallTag: floorTest
   playerTag: Player
   EXPLOSION: {fileID: 7412265361980566733}
-  damage: 50
+  damage: 20
   isCluster: 0
   clusterBullet: {fileID: 3935075400378937292, guid: b4a0eb04350c9584484946aa498bfdd6, type: 3}
 --- !u!136 &2523603755931002361
