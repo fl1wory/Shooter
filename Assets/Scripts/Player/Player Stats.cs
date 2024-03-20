@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO.Enumeration;
 using UnityEngine;
+using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     [Header("Player")]
@@ -10,6 +11,15 @@ public class PlayerStats : MonoBehaviour
     public  float speed;
     public float jumpForce;
     public float armorCoef;
+
+    [SerializeField] private Slider hpBar;
+
+    // set hpBar value to health
+    void Start()
+    {
+        hpBar.maxValue = health;
+        hpBar.value = health;
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -27,6 +37,7 @@ public class PlayerStats : MonoBehaviour
         }
         health -= damage / armorCoef;
         Debug.Log(health);
+        hpBar.value = health;
     }
 
     void Update()
