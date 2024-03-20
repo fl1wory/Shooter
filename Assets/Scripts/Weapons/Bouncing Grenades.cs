@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class BouncingGrenades : MonoBehaviour
 {
-    public float damagePerPounce = 10f;
+    public float damagePerPounce;
     public int maxBounces = 5;
     private int remainingBounces;
+    [SerializeField] private bulletScript grenades;
     void Start()
     {
         remainingBounces = maxBounces;
@@ -14,7 +15,8 @@ public class BouncingGrenades : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (remainingBounces > 0)
+        //grenades.explode(2);
+        if (remainingBounces >= 0)
         {
             remainingBounces--;
             damagePerPounce *= 1.2f;
@@ -23,7 +25,7 @@ public class BouncingGrenades : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            //grenades.explode(0);
         }
     }
 }

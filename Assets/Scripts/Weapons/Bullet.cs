@@ -4,10 +4,15 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 public class Bullet : MonoBehaviour
-{ 
+{
+    
+    [Header("Cluster")]
     public GameObject objectToSpawn; 
     public int numberOfObjectsToSpawn = 6; 
     public float pushForce = 10f;
+
+    [Header("Homing")]
+    public float rotationAngle = 90f;
     public IEnumerator SeparateGrenade()
     {
         for (int i = 0; i < numberOfObjectsToSpawn; i++)

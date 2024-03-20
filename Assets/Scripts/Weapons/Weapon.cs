@@ -12,12 +12,14 @@ public class Weapon : MonoBehaviour
     public string weaponName;
     public int ammoCount;
     public int ammoCountMax;
-    public GameObject bulletPrefab;
-    public ParticleSystem shootEffect;
-    public Transform shootPoint;
-    public GameObject weaponGameObject;
-    public Text ammoCountText;
-    public Text ammoCountMaxText;
+    [SerializeField] protected GameObject bulletPrefab;
+    [SerializeField] protected ParticleSystem shootEffect;
+    [SerializeField] protected Transform shootPoint;
+    [SerializeField] protected GameObject weaponGameObject;
+    [SerializeField] protected Text ammoCountText;
+    [SerializeField] protected Text ammoCountMaxText;
+    [SerializeField] protected AudioSource ShootSoundAudioSource;
+    [SerializeField] private AudioSource ReloadSoundAudioSource;
     
 
     ////////* tech variables */////////
@@ -32,12 +34,17 @@ public class Weapon : MonoBehaviour
         StartCoroutine(Reload());
     }
 
-    private void Update()
+    public void ReloadF()
     {
-        ammoCountText.text = ammoCount.ToString();
+        StartCoroutine(Reload());
     }
 
-    public void ShootGrenade(GameObject weaponGameObject)
+    private void Update()
+    {
+        ammoCountText.text = $"{ammoCount}";
+    }
+
+    public void ShootGrenade()
     {
         if (!isReloading) 
         { 
@@ -45,12 +52,12 @@ public class Weapon : MonoBehaviour
             Rigidbody rb = bullet.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                //weaponGameObject.transform.LookAt(weaponGameObject.transform.forward);
                 Debug.Log("shoot");
                 rb.AddForce(shootPoint.transform.up * speed, ForceMode.Impulse);
                 shootEffect.Play();
                 ammoCount--;
                 ammoCountText.text = ammoCount.ToString();
+                ShootSoundAudioSource.Play();
             }
         }
     }
@@ -64,6 +71,7 @@ public class Weapon : MonoBehaviour
             yield return new WaitForSeconds(reloadTime);
             ammoCount = ammoCountMax;
             StartCoroutine(Reload());
+            ReloadSoundAudioSource.Play();
         }
         else
         {
@@ -72,68 +80,4 @@ public class Weapon : MonoBehaviour
             StartCoroutine(Reload());
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*
-    public float Damage
-    {
-        get { return _damage; }
-        set { _damage = value; }
-    }
-
-    public float Speed
-    {
-        get { return _speed; }
-        set { _speed = value; }
-    }
-
-    public string Name
-    {
-        get { return _name; }
-        set { _name = value; }
-    }
-
-    public int AmmosCount
-    {
-        get { return _ammosCount; }
-        set { _ammosCount = value; }
-    }
-
-    public int AmmosCountMax
-    {
-        get { return _ammosCountMax; }
-        set { _ammosCountMax  = value; }
-    }
-
-    public GameObject BulletPrefab
-    {
-        get { return _bulletPrefab; }
-        set { _bulletPrefab = value; }
-    }
-
-    public GameObject ShootEffect
-    {
-        get { return _shootEffect; }
-        set { _shootEffect = value; }
-    }
-
-    public Transform ShootPoint
-    {
-        get { return _shootPoint; }
-        set { _shootPoint = value; }
-    }
-    */
 }
