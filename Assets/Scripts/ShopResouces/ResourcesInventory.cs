@@ -5,32 +5,41 @@ using UnityEngine.UI;
 
 public class ResourcesInventory : MonoBehaviour
 {
-    [SerializeField] private List<Resource> resoueces;
-    [SerializeField] private List<Resource> resouecesInvenory;
-    [SerializeField] private List<Text> resourceName;
-    [SerializeField] private List<Image> resourceImage;
-    [SerializeField] private List<Text> resourceCount;
-    
-    private void OnCollisionEnter(Collision collision)
+    [SerializeField] private List<Slot> slots;
+    [SerializeField] private float raycastLength = 5f; 
+
+    void Update()
     {
-        if (collision.gameObject.TryGetComponent(out Resource resource))
+        RaycastPick();
+    }
+
+    void RaycastPick()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
         {
-            // add a resource to the inventory
-            Pick(resource, resourceName[resourceName.Count - 1], resourceImage[resourceImage.Count - 1], resourceCount[resourceCount.Count - 1]);
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.forward, out hit, raycastLength))
+            {
+                GameObject hitObject = hit.transform.gameObject;
+                if (hitObject.TryGetComponent(out Resource r))
+                {
+                    Pick(hitObject);
+                }
+            }
         }
     }
 
-    void Pick(Resource obj, Text text, Image image, Text count)
+    void Pick(GameObject obj)
     {
-        obj.gameObject.SetActive(false);
-        resouecesInvenory.Add(obj);
-        //text.text = obj.GetComponent<Resource>().resourceName;
-        //image.sprite = obj.GetComponent<Resource>().resourceImageSprite;
-        //count.text = $"{int.Parse(count.text) + obj.GetComponent<Resource>().resourceCount}";
-    }
-
-    void Delete(Resource obj)
-    {
-        resouecesInvenory.Remove(obj);
-    }
+        foreach(Slot slot in slots)
+        {
+            if(!slot.hasItem || slot.TryGetComponent(out Resource res))
+            {
+                slot.SetSlotInf(res);
+                break;
+            }
+        }
+        obj.SetActive(false);
+    }  
 }
+

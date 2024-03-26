@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8253138426149399256}
   - component: {fileID: 3117640401879881229}
   - component: {fileID: 5263104434906720842}
-  - component: {fileID: 4107702969905976197}
   m_Layer: 0
   m_Name: EventListener
   m_TagString: Untagged
@@ -85,7 +84,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733413277946738826}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 807dbc8d27f295640b6e660ee94ed7b6, type: 3}
   m_Name: 
@@ -111,24 +110,3 @@ MonoBehaviour:
   powerUpsTags:
   - Shield
   - C4
---- !u!114 &4107702969905976197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733413277946738826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2436b854af80f1c4386cb6ec33ad771a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resoueces:
-  - {fileID: 8763862153675532221, guid: 05d39c2c858d3c24b9479555d2069a60, type: 3}
-  resouecesInvenory: []
-  resourceName:
-  - {fileID: 0}
-  resourceImage:
-  - {fileID: 0}
-  resourceCount:
-  - {fileID: 0}

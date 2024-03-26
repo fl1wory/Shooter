@@ -51,6 +51,7 @@ public class Enemy : MonoBehaviour
         waitTime = StartWaitTime;
         AFCTime = StartAFCTime;
         targetIndex = Random.Range(0, targetsList.Count);
+        player = Camera.main.transform.parent;
     }
     private void Update()
     {
@@ -65,7 +66,7 @@ public class Enemy : MonoBehaviour
 
     private void Patroling()
     {
-        //Вибирає рандом точку зі списку та йде до неї
+        //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅ
             agent.SetDestination(targetsList[targetIndex].position);
             float distanceToTarget = Vector3.Distance(transform.position, targetsList[targetIndex].position);
             if (distanceToTarget < 0.2f)

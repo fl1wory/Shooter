@@ -29,15 +29,11 @@ public class movingScript : MonoBehaviour
         float moveVertical = Input.GetAxisRaw("Vertical");
         cam.transform.forward = new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z);
         movement = cam.transform.TransformDirection(new Vector3(moveHorizontal, 0, moveVertical)).normalized * speed;
+        if(movement.magnitude > speed)
+        {
+            
+        }
         rb.AddForce(movement, ForceMode.VelocityChange);
         Debug.Log(rb.velocity);
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("floorTest")) 
-        {
-            isJumping = false;
-        }
     }
 }
